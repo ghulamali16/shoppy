@@ -12,6 +12,6 @@ class User < ApplicationRecord
       '/default_profile.jpg'
     end
   end
-
+  #TESTGIT
 
 end
