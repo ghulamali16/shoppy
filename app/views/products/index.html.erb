@@ -1,0 +1,66 @@
+
+<h1>Products
+<%if user_signed_in?%>
+      <%= link_to 'Sell a Product', new_product_path , class:"btn btn-dark float-right"%>
+ <%end%>
+</h1>
+
+<%
+=begin%>
+ <table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Make</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= product.make %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%
+=end%>
+
+<br>
+
+
+   <div class="container">
+      <div class="row">
+         <% @products.each do |product| %>
+         <div class="card ml-3 text-center mt-5">
+            <div class="card-body">
+                <a href="<%= product_path(product) %>", class="card-img-top"> <%= image_tag(product.image_url(:thumb)) %><a>
+
+                <hr>
+                <h5 class="card-title p-1"> <strong class="card-title mr-3 center"><%= product.title %></strong><%=number_to_currency(product.price, :unit => "PKR ", precision: 0)%></h5>
+                 <hr>
+                <p class="card-text p-1"><%= product.description %></p>
+                <hr>
+                <p class="card-text p-1">Sold By: <%= product.user.name %></p>
+                <hr>
+                <%if product_owner(product)%>
+                  <%= link_to 'Edit', edit_product_path(product), class:"btn btn-warning mr-3 btn-sm" %>
+                  <%= link_to 'Delete', product,method: :delete, data: {confirm: "Are your sure?"} , class:"btn btn-danger mr-3 btn-sm" %>
+
+                <%end%>
+              </div>
+         </div>
+         <% end %>
+      </div>
+      <br>
+
+
