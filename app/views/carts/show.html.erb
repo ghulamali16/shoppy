@@ -13,9 +13,13 @@
 <h2>Have a coupon?</h2>
 <input type=text >
 <h4 class="float-right",><%=number_to_currency(@cart.total_price, unit:"PKR ")%></h4>
+  <%if user_signed_in? %>
+    <%= render "charges/new" %>
+    <%else%>
 
-  <%= render "charges/new" %>
+       <%  flash[:notice] = 'You Must log In to Proceed' %>
 
+  <%end%>
 
 
 <%
