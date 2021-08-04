@@ -4,7 +4,7 @@ This is a Rails Application built as an Ecommerce Store. You can add, buy and se
 
 ## Operations
 
--User Accounts using Devise 
+-User Accounts using Devise
 
 User can have an avatar/image and a name for their account
 
@@ -32,7 +32,7 @@ Following functionality is added with the dependent gems
 * Gravatar - for user avatar (if there is no user image)
 * Commentator - A comment thread engine to handle comments on posts (requires Jquery)
 * Stripe - for payment method integration
-* Image processing - used for creating image variants by processing the image. 
+* Image processing - used for creating image variants by processing the image.
 * Simple Form- For simpler forms used in application
 * PG - Postgres Db gem
 
@@ -40,23 +40,23 @@ Following functionality is added with the dependent gems
 The application uses Postgres as the DB and you would need the PG Gem in your gemfile as well as the postgres installed on your local machine.
 ## Database initialization
 Following commands are to setup and migrate db schema
-```bash	
+```bash
 rails db:setup
 rails db:migrate
 ```
 
 ##  Configuring and running the application
-The application would need a 
-```bash 
+The application would need a
+```bash
 bundle install
  ```
- command on your local machine to install all the gem dependencies on it. You may need to run : 
+ command on your local machine to install all the gem dependencies on it. You may need to run :
 ```bash
-yarn add jquery 
+yarn add jquery
 ```
 for adding the jquery used in the application and for the commontator engine.
-To run the application you would need to run 
-``` bash 
+To run the application you would need to run
+``` bash
 rails s
 ```
  command for the local host server to start (using puma)

@@ -40,6 +40,7 @@ gem 'image_processing'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave'
 gem 'commontator'
+gem 'cloudinary'
 gem 'devise', '~> 4.4'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'mini_magick'

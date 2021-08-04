@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one_attached :avatar
-  has_many :products
+  has_many :products ,dependent: :destroy
   acts_as_commontator
 
   def avatar_thumbnail
