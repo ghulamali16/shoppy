@@ -45,8 +45,6 @@ gem 'mini_magick'
 gem 'simple_form'
 gem 'stripe'
 
-
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'better_errors', '~> 2.4'
@@ -75,4 +73,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem "ransack", "~> 2.4"
+gem 'ransack', '~> 2.4'
