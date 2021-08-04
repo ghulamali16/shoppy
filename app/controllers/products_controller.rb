@@ -9,9 +9,7 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/1 or /products/1.json
-  def show
-
-  end
+  def show; end
 
   # GET /products/new
   def new
@@ -61,17 +59,12 @@ class ProductsController < ApplicationController
   def search
     # @q = Product.ransack(params[:q])
     # @products = @q.result
-    @products = Product.where("lower(title) LIKE ?", "%"+params[:q]+"%")
-    if @products.count == 0
+    @products = Product.where('lower(title) LIKE ?', "%#{params[:q]}%")
+    if @products.count.zero?
       flash[:notice] = 'No product Found'
       redirect_to root_path
     end
   end
-
-
-
-
-
 
   private
 

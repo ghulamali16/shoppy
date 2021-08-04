@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class StripeChargesServices
-  DEFAULT_CURRENCY = 'usd'.freeze
+  DEFAULT_CURRENCY = 'usd'
 
   def initialize(params, user)
     @stripe_email = params[:stripeEmail]
@@ -17,11 +19,11 @@ class StripeChargesServices
   attr_accessor :user, :stripe_email, :stripe_token, :order
 
   def find_customer
-  if user.stripe_token
-    retrieve_customer(user.stripe_token)
-  else
-    create_customer
-  end
+    if user.stripe_token
+      retrieve_customer(user.stripe_token)
+    else
+      create_customer
+    end
   end
 
   def retrieve_customer(stripe_token)

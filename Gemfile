@@ -39,14 +39,13 @@ gem 'image_processing'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave'
+gem 'commontator'
 gem 'devise', '~> 4.4'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'mini_magick'
+gem 'sassc-rails'
 gem 'simple_form'
 gem 'stripe'
-gem 'commontator'
-gem 'sassc-rails'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -76,4 +75,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem "ransack", "~> 2.4"
+gem 'ransack', '~> 2.4'

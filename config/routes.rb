@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'registrations'
   }
-  resources :charges, only: [:new, :create]
+  resources :charges, only: %i[new create]
   root 'products#index'
   get 'user/show'
-  get 'search',to: 'products#search'
+  get 'search', to: 'products#search'
   mount Commontator::Engine => '/commontator'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
