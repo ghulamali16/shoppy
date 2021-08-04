@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached :avatar
   has_many :products
+  acts_as_commontator
 
   def avatar_thumbnail
     if avatar.attached?

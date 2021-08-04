@@ -44,7 +44,8 @@ gem 'gravatar_image_tag', '~> 1.2'
 gem 'mini_magick'
 gem 'simple_form'
 gem 'stripe'
-
+gem 'commontator'
+gem 'sassc-rails'
 
 
 group :development, :test do

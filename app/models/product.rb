@@ -10,7 +10,7 @@ class Product < ApplicationRecord
   validates :description, length: { maximum: 500, too_long: '%{count} characters are allowed' }
   validates :title, length: { maximum: 110, too_long: '%{count} characters are allowed' }
   validates :price, numericality: { only_integer: true }, length: { maximum: 7 }
-
+  acts_as_commontable dependent: :destroy
   def serial_number
     'SHPN-%.4d' % id
   end
