@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -7,11 +9,10 @@ class User < ApplicationRecord
   has_many :products
   def avatar_thumbnail
     if avatar.attached?
-      avatar.variant(resize: "150x150!").processed
+      avatar.variant(resize: '150x150!').processed
     else
       '/default_profile.jpg'
     end
   end
-  #TESTGIT
-
+  # TESTGIT
 end
