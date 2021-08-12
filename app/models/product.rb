@@ -14,6 +14,7 @@ class Product < ApplicationRecord
   def serial_number
     'SHPN-%.4d' % id
   end
+feature/cart_handling
 
   private
 
@@ -23,4 +24,5 @@ class Product < ApplicationRecord
       throw :abort
     end
   end
+ feature_product_prodImages
 end
