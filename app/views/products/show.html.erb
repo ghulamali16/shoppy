@@ -24,8 +24,7 @@
       <%= link_to 'Delete', @product,method: :delete, data: {confirm: "Are your sure?"} , class:"btn mr-3 btn-danger" %>
       <%end%>
     <%= link_to 'Back', products_path , class:"btn btn-dark" %>
-
-
+     <%=commontator_thread(@product)%>
     </div>
 
 

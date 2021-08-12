@@ -36,12 +36,14 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class:"btn btn-info" %>
   </div>
 <% end %>
+<br>
+<div class="jumbotron">
+<h3>I want to cancel my Account!</h3>
 
-<h3>Cancel my account</h3>
+<p>Unhappy? <br> <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class:"btn btn-sm btn-danger"%></p>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back , class:"btn btn-sm btn-warning"%>
+</div>

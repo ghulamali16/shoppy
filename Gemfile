@@ -39,14 +39,16 @@ gem 'image_processing'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave'
+gem 'commontator'
+gem 'cloudinary'
 gem 'devise', '~> 4.4'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'mini_magick'
+gem 'sassc-rails'
 gem 'simple_form'
  feature/Stripe_payment_and_Search
 gem 'stripe'
 
-# feature/cart_handling
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -78,4 +80,3 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # <<<<<<< feature/Stripe_payment_and_Search
 
 gem 'ransack', '~> 2.4'
-# feature/cart_handling

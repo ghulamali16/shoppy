@@ -67,8 +67,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  private
-
 
   private
 
