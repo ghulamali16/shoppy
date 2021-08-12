@@ -1,0 +1,17 @@
+<%
+=begin%>
+ <p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>
+<%
+=end%>
+<%=render(@cart.line_items) %>
+<%=link_to "empty cart", @cart, method: :delete, data:{confirm: "Are you sure?"}, class:"btn btn-danger ml-5"%>
+<br>
+<hr>
+<h4 class="float-right",><%=number_to_currency(@cart.total_price, unit:"PKR ")%></h4>
+<h2>Have a coupon?</h2>
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+  </div>

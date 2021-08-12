@@ -33,7 +33,16 @@
                 </li>
         <%end%>
 
-
+        <% if cart_has_items %>
+              <%= link_to cart_path(@cart), class:"nav-item btn btn-sm btn-warning" do %>
+              <span class="icon ">
+                <i class="fa fa-shopping-cart"></i>
+              </span>
+              <span>Cart
+                <%= cart_count_over_one %>
+                </span>
+              <% end %>
+            <% end %>
 
     </ul>
   </div>

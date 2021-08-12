@@ -5,10 +5,15 @@
     <%= image_tag(@product.image_url(:default)) %>
     </p>
     <div class="jumbotron", style="width:50rem">
-      <h1 class="display-10"><%= @product.title%>  <%=link_to 'Add to Cart', products_path, class:"btn btn-warning mr-1 float-right" %></h1>
+      <h1 class="display-10"><%= @product.title%>
+      <%if !product_owner(@product)%>
+         <%=button_to 'Add to Cart', line_items_path(product_id: @product), class:"btn btn-warning mr-1 float-right" %>
+      <%end%>
+        </h1>
       <p class="lead"><%= number_to_currency(@product.price, unit: "PKR ", precision:0) %></p>
       <p class="lead"><%= @product.description %></p>
       <p class="lead"><%= @product.make %></p>
+      <p class="lead"><%= @product.serial_number %></p>
       <hr class="my-4">
       <p>
       <strong>Sold By:</strong>
