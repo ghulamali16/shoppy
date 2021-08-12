@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   root 'products#index'
   get 'user/show'
   get 'search', to: 'products#search'
+
   mount Commontator::Engine => '/commontator'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
