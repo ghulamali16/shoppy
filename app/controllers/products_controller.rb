@@ -56,8 +56,23 @@ class ProductsController < ApplicationController
     end
   end
 
+#  feature/Stripe_payment_and_Search
+  def search
+    # @q = Product.ransack(params[:q])
+    # @products = @q.result
+    @products = Product.where('lower(title) LIKE ?', "%#{params[:q]}%")
+    if @products.count.zero?
+      flash[:notice] = 'No product Found'
+      redirect_to root_path
+    end
+  end
+
   private
 
+
+  private
+
+# >>>>>> feature/cart_handling
   # Use callbacks to share common setup or constraints between actions.
   def set_product
     @product = Product.find(params[:id])

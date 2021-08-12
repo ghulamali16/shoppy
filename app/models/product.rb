@@ -24,5 +24,8 @@ feature/cart_handling
       throw :abort
     end
   end
- feature_product_prodImages
-end
+# <eature/Stripe_payment_and_Search
+# 
+#  feature_product_prodImages
+#  feature/cart_handling
+ end

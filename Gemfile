@@ -43,6 +43,10 @@ gem 'devise', '~> 4.4'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'mini_magick'
 gem 'simple_form'
+ feature/Stripe_payment_and_Search
+gem 'stripe'
+
+# feature/cart_handling
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -71,3 +75,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# <<<<<<< feature/Stripe_payment_and_Search
+
+gem 'ransack', '~> 2.4'
+# feature/cart_handling

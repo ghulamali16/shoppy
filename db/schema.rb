@@ -12,7 +12,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
- feature/cart_handling
+# <<<<<<< feature/Stripe_payment_and_Search
+# =======
+#  feature/cart_handling
+# >>>>>>> feature/cart_handling
 ActiveRecord::Schema.define(version: 20_210_803_002_613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
@@ -52,7 +55,37 @@ ActiveRecord::Schema.define(version: 20_210_803_002_613) do
     t.integer 'quantity', default: 1
     t.index ['cart_id'], name: 'index_line_items_on_cart_id'
     t.index ['product_id'], name: 'index_line_items_on_product_id'
-=======
+#  feature/Stripe_payment_and_Search
+  end
+
+  create_table 'products', force: :cascade do |t|
+    t.string 'title'
+    t.string 'description'
+    t.integer 'price', default: 0
+    t.string 'make'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'user_id'
+    t.json 'image'
+  end
+
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'name'
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  end
+
+  add_foreign_key 'active_storage_attachments', 'active_storage_blobs', column: 'blob_id'
+  add_foreign_key 'line_items', 'carts'
+  add_foreign_key 'line_items', 'products'
+
 ActiveRecord::Schema.define(version: 20_210_802_201_941) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
@@ -110,4 +143,5 @@ ActiveRecord::Schema.define(version: 20_210_802_201_941) do
   add_foreign_key 'line_items', 'products'
 
  feature_product_prodImages
+# feature/cart_handling
 end

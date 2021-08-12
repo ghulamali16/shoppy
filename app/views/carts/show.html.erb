@@ -10,8 +10,37 @@
 <%=link_to "empty cart", @cart, method: :delete, data:{confirm: "Are you sure?"}, class:"btn btn-danger ml-5"%>
 <br>
 <hr>
-<h4 class="float-right",><%=number_to_currency(@cart.total_price, unit:"PKR ")%></h4>
 <h2>Have a coupon?</h2>
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+<input type=text >
+<h4 class="float-right",><%=number_to_currency(@cart.total_price, unit:"PKR ")%></h4>
+
+  <%= render "charges/new" %>
+
+
+
+<%
+=begin%>
+ <%= form_tag charges_path do %>
+<article>
+  <% if flash[:error].present? %>
+  <div id="error_explanation">
+    <p><%= flash[:error] %></p>
   </div>
+  <% end %>
+
+  <label class="amount">
+  <span>Amount: PKR<%= @cart.total_price %></span>
+  </label>
+</article>
+
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-description="A month's subscription"
+  data-amount="<%= @cart.total_price %>"
+  data-locale="auto"></script>
+  <input type=”hidden” name=”stripeToken” />
+
+<% end %>
+
+<%
+=end%>
